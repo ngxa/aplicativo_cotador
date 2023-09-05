@@ -112,7 +112,7 @@ def page_2():
                 
             if p2 == True:
                 saida2 = result['Exit 2'].values[0]
-                strike2 = result['Strike 2'].values[0]
+                strike2 = result.iloc[:, 12].values[0]
                 ind_max2 = lmi/2
                 paid_mm2 = ind_max2/strike2
                 CIDADE.append(c)
