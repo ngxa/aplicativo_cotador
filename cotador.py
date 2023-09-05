@@ -148,9 +148,12 @@ def page_2():
             workbook = Workbook()
             sheet = workbook.active
 
+            # Adicione o cabeçalho do DataFrame como a primeira linha no arquivo Excel
+            sheet.append(list(df.columns))
+
             # Adicione os dados do DataFrame ao arquivo Excel
-            for row in df.iterrows():
-                sheet.append(row[0].tolist())
+            for _, row in df.iterrows():
+                sheet.append(row.tolist())
 
             # Salve o arquivo Excel em memória
             excel_buffer = BytesIO()
