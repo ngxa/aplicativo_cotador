@@ -150,7 +150,7 @@ def page_2():
 
             # Adicione os dados do DataFrame ao arquivo Excel
             for row in df.iterrows():
-                sheet.append(row[1].tolist())
+                sheet.append(row[0].tolist())
 
             # Salve o arquivo Excel em memória
             excel_buffer = BytesIO()
